@@ -1,1 +1,23 @@
-
+from random import randint
+import time
+print('='*30)
+print('\033[37;40mIiciando jokenpô\033[m')
+print('='*30)
+print(' 1 = papel\n 2 = tesoura\n 3 = pedra')
+print('='*30)
+e = int(input('Escolha uma das opções e vamos começar:'))
+pro = ('papel','tesoura','pedra')
+ep = randint(0, 2)
+formatar = e - 1
+print('\033[37;40mJO\033[m')
+time.sleep(1)
+print('\033[37;40mKEN\033[m')
+time.sleep(1)
+print('\033[37;40mPÔ\033[m')
+time.sleep(0.5)
+if ep == formatar:
+    print(f'\033[37;40mA disputa deu empate, tanto eu quanto você escolhemos {pro[formatar]}\033[m')
+elif (ep == 0 and formatar == 2) or (ep == 1 and formatar == 0) or (ep == 2 and formatar == 1):
+    print(f'\033[37;40mEu ganhei, pois escolhi {pro[ep]} e vocé {pro[formatar]}\033[m')
+else:
+    print(f'\033[37;40mParabéns, você ganhou, pois escolheu {pro[formatar]} e eu escolhi {pro[ep]}\033[m')
